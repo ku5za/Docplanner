@@ -1,0 +1,6 @@
+@Docplanner.API_HostAddress = http://localhost:5074
+
+GET {{Docplanner.API_HostAddress}}/slots/
+Accept: application/json
+
+###
