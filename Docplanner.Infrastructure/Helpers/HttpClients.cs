@@ -1,4 +1,4 @@
-namespace Docplanner.API.Helpers;
+namespace Docplanner.Infrastructure.Helpers;
 
 public static class HttpClients
 {
