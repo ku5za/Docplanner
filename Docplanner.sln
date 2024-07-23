@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docplanner.API", "Docplanner.API\Docplanner.API.csproj", "{58DC2C38-B63C-4EB9-8913-DCBD3F650B71}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docplanner.Infrastructure", "Docplanner.Infrastructure\Docplanner.Infrastructure.csproj", "{7A6AFAC2-D3B1-40D7-9224-FFDE784C1C85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docplanner.Application", "Docplanner.Application\Docplanner.Application.csproj", "{071C3E0B-1385-49C8-A822-9982F3ADB3A5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{58DC2C38-B63C-4EB9-8913-DCBD3F650B71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58DC2C38-B63C-4EB9-8913-DCBD3F650B71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58DC2C38-B63C-4EB9-8913-DCBD3F650B71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A6AFAC2-D3B1-40D7-9224-FFDE784C1C85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A6AFAC2-D3B1-40D7-9224-FFDE784C1C85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A6AFAC2-D3B1-40D7-9224-FFDE784C1C85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A6AFAC2-D3B1-40D7-9224-FFDE784C1C85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{071C3E0B-1385-49C8-A822-9982F3ADB3A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{071C3E0B-1385-49C8-A822-9982F3ADB3A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{071C3E0B-1385-49C8-A822-9982F3ADB3A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{071C3E0B-1385-49C8-A822-9982F3ADB3A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
