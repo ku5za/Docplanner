@@ -1,5 +1,10 @@
 using System.Net.Http.Headers;
-using Docplanner.API.Helpers;
+using Docplanner.Application;
+using Docplanner.Application.Interfaces;
+using Docplanner.Application.Models;
+using Docplanner.Infrastructure;
+using Docplanner.Infrastructure.Helpers;
+using Docplanner.Infrastructure.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +22,12 @@ builder.Services.AddHttpClient(HttpClients.SlotsService, client =>
         Convert.ToBase64String($"{username}:{password}".Select(Convert.ToByte).ToArray()));
 });
 
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+builder.Services.AddScoped<ISlotsRepository, SlotsRepository>();
+builder.Services.AddScoped<ISlotsInput, SlotsRepository>();
+builder.Services.AddScoped<ISlotsService, SlotsService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -28,15 +39,10 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapGet("/slots", async (IHttpClientFactory factory) =>
-    {
-        using var client = factory.CreateClient(HttpClients.SlotsService);
-        var response = await client.GetAsync($"{SlotsServiceEndpoints.GetWeeklyAvailability}/20240715");
-        
-        response.EnsureSuccessStatusCode();
-        
-        return await response.Content.ReadAsStringAsync();
-    })
+app.MapGet("/slots", 
+        async (string mondayDate, ISlotsService slotsService) => 
+            await slotsService.GetAvailableSlots(new GetAvailableSlotsQuery(){MondayDate = mondayDate})
+            )
     .WithName("GetSlots")
     .WithOpenApi();
 
